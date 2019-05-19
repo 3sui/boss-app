@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="app">
         <div class="list-header flex">
             <form class="flex" action="">
                 <img src="images/icon-home.png" alt="">
@@ -26,207 +26,57 @@
 
         </div>
         <div class="filter flex">
-            <dl class="active1">
-                <dt>经验</dt>
+            <dl class="active1" v-for="item in filters">
+                <dt>{{item.name}}</dt>
                 <dd>
                     <ul>
-                        <li class="active1">不限</li>
-                        <li>在校生</li>
-                        <li>应届生</li>
-                        <li>1年以内</li>
-                        <li>1-3年</li>
-                        <li>3-5年</li>
-                        <li>5-10年</li>
-                        <li>10年以上</li>
-                    </ul>
-                </dd>
-            </dl>
-
-            <dl>
-                <dt>经验</dt>
-                <dd>
-                    <ul>
-                        <li>不限</li>
-                        <li>在校生</li>
-                        <li>应届生</li>
-                        <li>1年以内</li>
-                        <li>1-3年</li>
-                        <li>3-5年</li>
-                        <li>5-10年</li>
-                        <li>10年以上</li>
-                    </ul>
-                </dd>
-            </dl>
-            <dl>
-                <dt>经验</dt>
-                <dd>
-                    <ul>
-                        <li>不限</li>
-                        <li>在校生</li>
-                        <li>应届生</li>
-                        <li>1年以内</li>
-                        <li>1-3年</li>
-                        <li>3-5年</li>
-                        <li>5-10年</li>
-                        <li>10年以上</li>
-                    </ul>
-                </dd>
-            </dl>
-            <dl>
-                <dt>经验</dt>
-                <dd>
-                    <ul>
-                        <li>不限</li>
-                        <li>在校生</li>
-                        <li>应届生</li>
-                        <li>1年以内</li>
-                        <li>1-3年</li>
-                        <li>3-5年</li>
-                        <li>5-10年</li>
-                        <li>10年以上</li>
-                    </ul>
-                </dd>
-            </dl>
-            <dl>
-                <dt>经验</dt>
-                <dd>
-                    <ul>
-                        <li>不限</li>
-                        <li>在校生</li>
-                        <li>应届生</li>
-                        <li>1年以内</li>
-                        <li>1-3年</li>
-                        <li>3-5年</li>
-                        <li>5-10年</li>
-                        <li>10年以上</li>
+                        <li class="active1" v-for="option in item.options">{{option.text}}</li>
                     </ul>
                 </dd>
             </dl>
         </div>
 
         <ul class="job-list">
-            <li>
+            <li v-for="item in jobs">
                 <a class="job-item flex" href="#">
-                    <img src="images/xiaomi.jpg" alt="">
+                    <img :src="item.logo" alt="">
                     <div class="text">
                         <div class="title flex">
-                            web前端
-                            <span class="salary">20k-30k</span>
+                            {{item.title}}
+                            <span class="salary">{{item.salary}}</span>
                         </div>
-                        <div class="company">小米科技有限责任公司</div>
+                        <div class="company">{{item.company}}</div>
                         <div class="props">
-                            <span>北京</span>
-                            <span>3-5年</span>
-                            <span>本科</span>
+                            <span v-for="tag in item.tags">{{tag}}</span>
                         </div>
                     </div>
                 </a>
             </li>
-            <li>
-                <a class="job-item flex" href="#">
-                    <img src="images/xiaomi.jpg" alt="">
-                    <div class="text">
-                        <div class="title flex">
-                            web前端
-                            <span class="salary">20k-30k</span>
-                        </div>
-                        <div class="company">小米科技有限责任公司</div>
-                        <div class="props">
-                            <span>北京</span>
-                            <span>3-5年</span>
-                            <span>本科</span>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a class="job-item flex" href="#">
-                    <img src="images/xiaomi.jpg" alt="">
-                    <div class="text">
-                        <div class="title flex">
-                            web前端
-                            <span class="salary">20k-30k</span>
-                        </div>
-                        <div class="company">小米科技有限责任公司</div>
-                        <div class="props">
-                            <span>北京</span>
-                            <span>3-5年</span>
-                            <span>本科</span>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a class="job-item flex" href="#">
-                    <img src="images/xiaomi.jpg" alt="">
-                    <div class="text">
-                        <div class="title flex">
-                            web前端
-                            <span class="salary">20k-30k</span>
-                        </div>
-                        <div class="company">小米科技有限责任公司</div>
-                        <div class="props">
-                            <span>北京</span>
-                            <span>3-5年</span>
-                            <span>本科</span>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a class="job-item flex" href="#">
-                    <img src="images/xiaomi.jpg" alt="">
-                    <div class="text">
-                        <div class="title flex">
-                            web前端
-                            <span class="salary">20k-30k</span>
-                        </div>
-                        <div class="company">小米科技有限责任公司</div>
-                        <div class="props">
-                            <span>北京</span>
-                            <span>3-5年</span>
-                            <span>本科</span>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a class="job-item flex" href="#">
-                    <img src="images/xiaomi.jpg" alt="">
-                    <div class="text">
-                        <div class="title flex">
-                            web前端
-                            <span class="salary">20k-30k</span>
-                        </div>
-                        <div class="company">小米科技有限责任公司</div>
-                        <div class="props">
-                            <span>北京</span>
-                            <span>3-5年</span>
-                            <span>本科</span>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a class="job-item flex" href="#">
-                    <img src="images/xiaomi.jpg" alt="">
-                    <div class="text">
-                        <div class="title flex">
-                            web前端
-                            <span class="salary">20k-30k</span>
-                        </div>
-                        <div class="company">小米科技有限责任公司</div>
-                        <div class="props">
-                            <span>北京</span>
-                            <span>3-5年</span>
-                            <span>本科</span>
-                        </div>
-                    </div>
-                </a>
-            </li>
-
         </ul>
     </div>
+    <script src="script/vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                filters: [],
+                jobs: []
+            },
+            created: function () {
+                fetch('http://127.0.0.1:5500/api/filters.json').then(function (res) {
+                    return res.json()
+                }).then(function (data) {
+                    vm.filters = data
+                })
+
+                fetch('http://127.0.0.1:5500/api/jobs.json').then(function (res) {
+                    return res.json()
+                }).then(function (data) {
+                    vm.jobs = data
+                })
+            }
+        })
+    </script>
 </body>
 
 </html>

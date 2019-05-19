@@ -1,0 +1,58 @@
+[
+    {
+        "logo": "images/xiaomi.jpg",
+        "title": "Web前端",
+        "salary": "7k-222k",
+        "company": "小米科技有限责任公司",
+        "tags": ["上海",  "大专"]
+    },
+    {
+        "logo": "images/xiaomi.jpg",
+        "title": "Web端",
+        "salary": "7k-122k",
+        "company": "小米科技任公司",
+        "tags": ["上海", "一年以内", "专"]
+    },
+    {
+        "logo": "images/xiaomi.jpg",
+        "title": "前端",
+        "salary": "17k-12k",
+        "company": "有限责任公司",
+        "tags": ["海", "一年以内", "大专"]
+    },
+    {
+        "logo": "images/xiaomi.jpg",
+        "title": "Web",
+        "salary": "78k-12k",
+        "company": "小米公司",
+        "tags": ["上海", "一年以内", "大专","北京"]
+    },
+    {
+        "logo": "images/xiaomi.jpg",
+        "title": "Web前端",
+        "salary": "7k-12k",
+        "company": "小米科责任公司",
+        "tags": ["上海", "一年以内", "大专"]
+    },
+    {
+        "logo": "images/xiaomi.jpg",
+        "title": "Web前端",
+        "salary": "7k-12k",
+        "company": "小米科技有限责任公司",
+        "tags": ["上海", "一年以内", "大专"]
+    },
+    {
+        "logo": "images/xiaomi.jpg",
+        "title": "Web前端",
+        "salary": "7k-12k",
+        "company": "小米科技有限责任公司",
+        "tags": ["上海", "一年以内", "大专"]
+    },
+    {
+        "logo": "images/xiaomi.jpg",
+        "title": "Web前端",
+        "salary": "7k-12k",
+        "company": "小米科技有限责任公司",
+        "tags": ["上海", "一年以内", "大专"]
+    }
+]

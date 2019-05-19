@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="app">
         <div class="home-header">
             <img src="images/home-search-text.png" alt="">
             <form action="">
@@ -20,84 +20,14 @@
             </form>
         </div>
         <div class="home-categories">
-            <dl>
+            <dl v-for="item in categories">
                 <dt>
-                    <img src="images/technology.png" alt="">
-                    <div>技术</div>
+                    <img :src="item.icon" alt="">
+                    <div>{{item.name}}</div>
                 </dt>
                 <dd>
-                    <a href="#" class="tag">Java</a>
-                    <a href="#" class="tag">PHP</a>
-                    <a href="#" class="tag">Web前端</a>
-                    <a href="#" class="tag">数据挖掘</a>
-                    <a href="#" class="tag">C++</a>
-                    <a href="#" class="tag">Python</a>
-                    <a href="#" class="tag">Android</a>
-                    <a href="#" class="tag">ios</a>
-                </dd>
-            </dl>
-            <dl>
-                <dt>
-                    <img src="images/technology.png" alt="">
-                    <div>技术</div>
-                </dt>
-                <dd>
-                    <a href="#" class="tag">Java</a>
-                    <a href="#" class="tag">PHP</a>
-                    <a href="#" class="tag">Web前端</a>
-                    <a href="#" class="tag">数据挖掘</a>
-                    <a href="#" class="tag">C++</a>
-                    <a href="#" class="tag">Python</a>
-                    <a href="#" class="tag">Android</a>
-                    <a href="#" class="tag">ios</a>
-                </dd>
-            </dl>
-            <dl>
-                <dt>
-                    <img src="images/technology.png" alt="">
-                    <div>技术</div>
-                </dt>
-                <dd>
-                    <a href="#" class="tag">Java</a>
-                    <a href="#" class="tag">PHP</a>
-                    <a href="#" class="tag">Web前端</a>
-                    <a href="#" class="tag">数据挖掘</a>
-                    <a href="#" class="tag">C++</a>
-                    <a href="#" class="tag">Python</a>
-                    <a href="#" class="tag">Android</a>
-                    <a href="#" class="tag">ios</a>
-                </dd>
-            </dl>
-            <dl>
-                <dt>
-                    <img src="images/technology.png" alt="">
-                    <div>技术</div>
-                </dt>
-                <dd>
-                    <a href="#" class="tag">Java</a>
-                    <a href="#" class="tag">PHP</a>
-                    <a href="#" class="tag">Web前端</a>
-                    <a href="#" class="tag">数据挖掘</a>
-                    <a href="#" class="tag">C++</a>
-                    <a href="#" class="tag">Python</a>
-                    <a href="#" class="tag">Android</a>
-                    <a href="#" class="tag">ios</a>
-                </dd>
-            </dl>
-            <dl>
-                <dt>
-                    <img src="images/technology.png" alt="">
-                    <div>技术</div>
-                </dt>
-                <dd>
-                    <a href="#" class="tag">Java</a>
-                    <a href="#" class="tag">PHP</a>
-                    <a href="#" class="tag">Web前端</a>
-                    <a href="#" class="tag">数据挖掘</a>
-                    <a href="#" class="tag">C++</a>
-                    <a href="#" class="tag">Python</a>
-                    <a href="#" class="tag">Android</a>
-                    <a href="#" class="tag">ios</a>
+                    <a href="#" class="tag" v-for="tag in item.tags">{{tag}}</a>
+
                 </dd>
             </dl>
         </div>
@@ -106,6 +36,22 @@
             <p>企业服务热线和举报投诉：400 065 5799</p>
         </div>
     </div>
+    <script src="script/vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                categories: [],
+            },
+            created: function () {
+                fetch('http://127.0.0.1:5500/api/index.json').then(function (res) {
+                    return res.json()
+                }).then(function (data) {
+                    vm.categories = data
+                })
+            }
+        })
+    </script>
 </body>
 
 </html>
